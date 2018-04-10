@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Tourist;
+use App\Destination;
+use App\Hotel;
+use App\Country;
+use App\Nationality;
 use Illuminate\Http\Request;
 
 class TouristController extends Controller
@@ -15,8 +19,12 @@ class TouristController extends Controller
     public function index()
     {
         $tourist = Tourist::all();
+        $country = Country::all();
+        $nationality = Nationality::all();
+        $hotel = Hotel::all();
+        $destination = Destination::all();
 
-        return view('post.create', compact('tourist'));
+        return view('post.create', compact('tourist', 'country', 'nationality', 'hotel', 'destination'));
     }
 
     /**

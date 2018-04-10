@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Country;
+use App\Continant;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -15,8 +16,9 @@ class DestinationController extends Controller
     public function index()
     {
         $country = Country::all();
+        $continant = Continant::all();
 
-        return view('post.create', compact('country'));
+        return view('post.create', compact('country', 'continant'));
     }
 
     /**
