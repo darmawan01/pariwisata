@@ -24,5 +24,5 @@ class HotelController extends Controller
 
         ]);
         return redirect()->back()->withSuccess('Data Berhasil di Simpan');
-    }
+    }   
 }
