@@ -14,5 +14,6 @@ class Tourist extends Model
         'country_id',
         'nationality_id',
         'destination_id',
+        'hotel_id',
     ];
 }
