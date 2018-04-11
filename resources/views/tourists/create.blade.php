@@ -3,13 +3,13 @@
     <!-- Main content -->
     <div class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">Tambahkan tourists</h3>
+            <h3 class="box-title">Tambahkan hotels</h3>
         </div>
         <div class="box-body">
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('tourists.store') }}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('hotels.store') }}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
                         
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('gender') ? ' has-error' : '' }}">
-                            <label>Name</label>
+                            <label>Gender</label>
                             <input value="{{ old('gender') }}" type="text" class="form-control" name="gender">
                             @if ($errors->has('gender'))
                                 <span class="help-block"><strong>{{ $errors->first('gender') }}</strong></span>
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('age') ? ' has-error' : '' }}">
-                            <label>Name</label>
+                            <label>Age</label>
                             <input value="{{ old('age') }}" type="text" class="form-control" name="age">
                             @if ($errors->has('age'))
                                 <span class="help-block"><strong>{{ $errors->first('age') }}</strong></span>
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('nationality_id') ? ' has-error' : '' }}">
-                            <label>Pilih Conutries</label><br>
+                            <label>Pilih Nationality</label><br>
                             <select id="basic3" class="show-tick form-control" name="nationality_id" multiple>
                                 <option disabled="" selected="">Pilih Nationality</option>
                                 @foreach($nationality as $n)
@@ -71,16 +71,16 @@
                             @endif
                         </div>
 
-                        <div class="form-group {{ $errors->has('tourists_id') ? ' has-error' : '' }}">
-                            <label>Pilih tourists</label><br>
-                            <select id="basic4" class="show-tick form-control" name="tourists_id" multiple>
-                                <option disabled="" selected="">Pilih tourists</option>
-                                @foreach($tourist as $s)
+                        <div class="form-group {{ $errors->has('hotel_id') ? ' has-error' : '' }}">
+                            <label>Pilih Hotel</label><br>
+                            <select id="basic4" class="show-tick form-control" name="hotels_id" multiple>
+                                <option disabled="" selected="">Pilih Hotel</option>
+                                @foreach($hotel as $s)
                                     <option value="{{ $s->id }}">{{ $s->name }}</option>
                                 @endforeach
                             </select>
-                            @if ($errors->has('tourists_id'))
-                                <span class="help-block"><strong>{{ $errors->first('tourists_id') }}</strong></span>
+                            @if ($errors->has('hotels_id'))
+                                <span class="help-block"><strong>{{ $errors->first('hotels_id') }}</strong></span>
                             @endif
                         </div>
 

@@ -24,7 +24,7 @@ class TouristController extends Controller
         $hotel = Hotel::all();
         $destination = Destination::all();
 
-        return view('tourists.create', compact('tourist', 'country', 'nationality', 'hotel', 'destination'));
+        return view('tourists.index', compact('tourist', 'country', 'nationality', 'hotel', 'destination'));
     }
 
     /**
@@ -34,7 +34,11 @@ class TouristController extends Controller
      */
     public function create()
     {
-        return view('tourists.create');
+        $country = Country::all();
+        $nationality = Nationality::all();
+        $hotel = Hotel::all();
+        $destination = Destination::all();
+        return view('tourists.create', compact('country', 'nationality', 'hotel', 'destination'));
     }
 
     /**
