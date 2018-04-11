@@ -60,7 +60,7 @@
 
                         <div class="form-group {{ $errors->has('nationality_id') ? ' has-error' : '' }}">
                             <label>Pilih Conutries</label><br>
-                            <select id="basic2" class="show-tick form-control" name="nationality_id" multiple>
+                            <select id="basic3" class="show-tick form-control" name="nationality_id" multiple>
                                 <option disabled="" selected="">Pilih Nationality</option>
                                 @foreach($nationality as $n)
                                     <option value="{{ $n->id }}">{{ $n->name }}</option>
@@ -73,7 +73,7 @@
 
                         <div class="form-group {{ $errors->has('tourists_id') ? ' has-error' : '' }}">
                             <label>Pilih tourists</label><br>
-                            <select id="basic2" class="show-tick form-control" name="tourists_id" multiple>
+                            <select id="basic4" class="show-tick form-control" name="tourists_id" multiple>
                                 <option disabled="" selected="">Pilih tourists</option>
                                 @foreach($tourist as $s)
                                     <option value="{{ $s->id }}">{{ $s->name }}</option>
@@ -86,7 +86,7 @@
 
                         <div class="form-group {{ $errors->has('destination_id') ? ' has-error' : '' }}">
                             <label>Pilih Destination</label><br>
-                            <select id="basic2" class="show-tick form-control" name="destination_id" multiple>
+                            <select id="basic5" class="show-tick form-control" name="destination_id" multiple>
                                 <option disabled="" selected="">Pilih Destination</option>
                                 @foreach($destination as $d)
                                     <option value="{{ $d->id }}">{{ $d->name }}</option>

@@ -16,11 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/hotel/create', 'HotelController@create')->name('hotel.create');
-Route::post('/hotel/create', 'HotelController@store')->name('hotel.store');
-
 Route::middleware('auth')->group(function () {
     //tourists route
     Route::get('/tourists', 'TouristController@index')->name('tourists.index');

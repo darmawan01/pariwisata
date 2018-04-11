@@ -102,6 +102,16 @@
             liveSearch: true,
             maxOptions: 1
         });
+        
+        $('#basic4').selectpicker({
+            liveSearch: true,
+            maxOptions: 1
+        });
+        
+        $('#basic5').selectpicker({
+            liveSearch: true,
+            maxOptions: 1
+        });
     });
 </script>
 
