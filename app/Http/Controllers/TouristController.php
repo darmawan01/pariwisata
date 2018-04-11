@@ -24,7 +24,7 @@ class TouristController extends Controller
         $hotel = Hotel::all();
         $destination = Destination::all();
 
-        return view('post.create', compact('tourist', 'country', 'nationality', 'hotel', 'destination'));
+        return view('tourists.create', compact('tourist', 'country', 'nationality', 'hotel', 'destination'));
     }
 
     /**
@@ -34,7 +34,7 @@ class TouristController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('tourists.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class TouristController extends Controller
             'hotel_id' => request('hotel_id'),
         ]);
 
-        return redirect()->route('post.index')->withSuccess('Data Di Tambahkan !!!');
+        return redirect()->route('tourists.index')->withSuccess('Data Di Tambahkan !!!');
     }
 
     /**
@@ -78,7 +78,7 @@ class TouristController extends Controller
      */
     public function show(Tourist $tourist)
     {
-        return view('post.show', compact('tourist'));
+        return view('tourists.show', compact('tourist'));
     }
 
     /**
@@ -92,7 +92,7 @@ class TouristController extends Controller
     {
         $tourists = Tourist::all();
 
-        return view('post.edit', compact('tourist', 'tourists'));
+        return view('tourists.edit', compact('tourist', 'tourists'));
     }
 
     /**
@@ -125,7 +125,7 @@ class TouristController extends Controller
             'hotel_id' => request('hotel_id'),
         ]);
 
-        return redirect()->route('post.index')->withInfo('Data Di Ubah !!!');
+        return redirect()->route('tourists.index')->withInfo('Data Di Ubah !!!');
     }
 
     /**
@@ -139,6 +139,6 @@ class TouristController extends Controller
     {
         $tourist->delete();
 
-        return redirect()->route('post.index')->withDanger('Data Di Tambahkan !!!');
+        return redirect()->route('tourists.index')->withDanger('Data Di Tambahkan !!!');
     }
 }

@@ -3,7 +3,7 @@
     <!-- Main content -->
     <div class="box box-info">
         <div class="box-header">
-            <h3 class="box-title">Data Nationalities</h3>
+            <h3 class="box-title">Data destinations</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -17,31 +17,29 @@
                 </thead>
                 <tbody>
 
-                @foreach($hotel as $h)
+                @foreach($destination as $n)
                     <tr>
                         <td width="3%">{{ $loop->index + 1 }}</td>
-                        <td width="16%">{{ $h->name }}</td>
+                        <td width="16%">{{ $n->name }}</td>
                         <td width="16%" class="text-center">
-                            @if(Auth::user()->role == 0)
                                 <div class="row">
                                     <div class="col col-sm-2">
-                                        <a href="{{ route('hotel.edit', $h->id) }}"
+                                        <a href="{{ route('destinations.edit', $n->id) }}"
                                            data-toggle="tooltip" data-placement="top" title="Edit"
                                            class="btn btn-xs btn-warning btn-flat"><i
                                                     class="glyphicon glyphicon-edit"></i></a>
                                     </div>
                                     <div class="col col-sm-2">
-                                        <form class="" action="{{ route('hotel.destroy', $h->id)}}" method="post">
+                                        <form class="" action="{{ route('destinations.destroy', $n->id)}}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-                                            <button onclick="window.alert('Hapus hotel ?')" type="submit"
+                                            <button onclick="window.alert('Hapus destinations ?')" type="submit"
                                                     data-toggle="tooltip" data-placement="top" title="Hapus"
                                                     name="button" class="btn btn-xs btn-danger btn-flat"><span
                                                         class="glyphicon glyphicon-trash"></span></button>
                                         </form>
                                     </div>
                                 </div>
-                            @endif
                         </td>
                     </tr>
                 @endforeach

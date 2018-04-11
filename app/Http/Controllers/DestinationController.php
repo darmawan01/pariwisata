@@ -16,7 +16,7 @@ class DestinationController extends Controller
     {
         $destination = Destination::all();
 
-        return view('post.create', compact('destination'));
+        return view('destinations.create', compact('destination'));
     }
 
     /**
@@ -26,7 +26,7 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('destinations.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class DestinationController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect()->route('post.index')->withSuccess('Data Di Tambahkan !!!');
+        return redirect()->route('destinations.index')->withSuccess('Data Di Tambahkan !!!');
     }
 
     /**
@@ -58,7 +58,7 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
-        return view('post.show', compact('destination'));
+        return view('destinations.show', compact('destination'));
     }
 
     /**
@@ -72,7 +72,7 @@ class DestinationController extends Controller
     {
         $destinations = Destination::all();
 
-        return view('post.edit', compact('destination', '$destinations'));
+        return view('destinations.edit', compact('destination', '$destinations'));
     }
 
     /**
@@ -105,7 +105,7 @@ class DestinationController extends Controller
             'hotel_id' => request('hotel_id'),
         ]);
 
-        return redirect()->route('post.index')->withInfo('Data Di Ubah !!!');
+        return redirect()->route('destinations.index')->withInfo('Data Di Ubah !!!');
     }
 
     /**
@@ -119,6 +119,6 @@ class DestinationController extends Controller
     {
         $destination->delete();
 
-        return redirect()->route('post.index')->withDanger('Data Di Tambahkan !!!');
+        return redirect()->route('destinations.index')->withDanger('Data Di Tambahkan !!!');
     }
 }

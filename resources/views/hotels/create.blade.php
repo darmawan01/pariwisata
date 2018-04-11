@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('hotel.store') }}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('hotels.store') }}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('owner') ? ' has-error' : '' }}">
-                            <label>Name</label>
+                            <label>Owner</label>
                             <input value="{{ old('owner') }}" type="text" class="form-control" name="owner">
                             @if ($errors->has('owner'))
                                 <span class="help-block"><strong>{{ $errors->first('owner') }}</strong></span>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label>Name</label>
+                            <label>Address</label>
                             <input value="{{ old('address') }}" type="text" class="form-control" name="address">
                             @if ($errors->has('address'))
                                 <span class="help-block"><strong>{{ $errors->first('address') }}</strong></span>

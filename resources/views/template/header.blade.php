@@ -20,7 +20,7 @@
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="{{ asset('avatar.png')}}" class="user-image" alt="User Image">
-                    <span class="hidden-xs">Nama ADmin</span>
+                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
 
                 </a>
                 <ul class="dropdown-menu">
@@ -29,8 +29,8 @@
                         <img src="{{ asset('avatar.png')}}" class="img-circle" alt="User Image">
 
                         <p>
-                            Nama Admin
-                            <small>Nama Email</small>
+                            {{ Auth::user()->name }}
+                            <small>{{ Auth::user()->email }}</small>
                         </p>
                     </li>
                     <!-- Menu Body -->

@@ -34,7 +34,6 @@
                         <td width="16%">{{ $h->email }}</td>
                         <td width="16%">{{ $h->npwp }}</td>
                         <td width="16%" class="text-center">
-                            @if(Auth::user()->role == 0)
                                 <div class="row">
                                     <div class="col col-sm-2">
                                         <a href="{{ route('hotel.edit', $h->id) }}"
@@ -53,14 +52,11 @@
                                         </form>
                                     </div>
                                 </div>
-                            @endif
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
-
             </table>
         </div>
-        <!-- /.box-body -->
     </div>
 @endsection

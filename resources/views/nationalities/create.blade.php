@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('nationalities.store') }}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('destinations.store') }}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">

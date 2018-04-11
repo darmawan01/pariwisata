@@ -8,7 +8,7 @@
                      class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Nama ADMin</p>
+                <p>{{ Auth::user()->name }}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -39,53 +39,73 @@
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href=""><i
-                                    class="fa fa-circle-o"></i>List Hotel</a></li>
-                    <li class=""><a href="{{ route('hotel.create')}}"><i
-                                    class="fa fa-circle-o"></i>Tambah Hotel</a></li>
+                    <li class=""><a href="{{ route('hotels.index')}}"><i class="fa fa-circle-o"></i>List Hotel</a></li>
+                    <li class=""><a href="{{ route('hotels.create')}}"><i class="fa fa-circle-o"></i>Tambah Hotel</a></li>
+                    {{-- <li class=""><a href="{{ route('hotel.grafik')}}"><i class="fa fa-circle-o"></i>Grafik Hotel</a></li> --}}
+                </ul>
+            </li>
+            
+            <li class="treeview ">
+                <a href="">
+                    <i class="fa fa-users"></i> <span>tourists</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{ route('tourists.index')}}"><i class="fa fa-circle-o"></i>List touristss</a></li>
+                    <li class=""><a href="{{ route('tourists.create')}}"><i class="fa fa-circle-o"></i>Tambah touristss</a></li>
+                    {{-- <li class=""><a href="{{ route('tourists.grafik')}}"><i class="fa fa-circle-o"></i>Grafik touristss</a></li> --}}
                 </ul>
             </li>
            
-
-                <li class="">
-                    <a href="">
-                        <i class="fa fa-spinner"></i> <span>Pembagian Tugas</span>
-                    </a>
-                </li>
+            <li class="treeview ">
+                <a href="">
+                    <i class="fa fa-users"></i> <span>Containants</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{ route('continants.index')}}"><i class="fa fa-circle-o"></i>List Containants</a></li>
+                    <li class=""><a href="{{ route('continants.create')}}"><i class="fa fa-circle-o"></i>Tambah Containants</a></li>
+                    {{-- <li class=""><a href="{{ route('continants.grafik')}}"><i class="fa fa-circle-o"></i>Grafik Containants</a></li> --}}
+                </ul>
+            </li>
             
-            <li class="">
-                <a href="">
-                    <i class="fa fa-tag"></i> <span>Pembayaran</span>
-                </a>
-            </li>
             <li class="treeview ">
                 <a href="">
-                    <i class="fa fa-file"></i> <span>Rekapan</span>
+                    <i class="fa fa-users"></i> <span>Countries</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="">
-                            <i class="fa fa-circle-o"></i>Rekap Pembayaran Details</a></li>
-                    <li class=""><a href="">
-                            <i class="fa fa-circle-o"></i>Rekap Pembayaran</a></li>
-                    <li class=""><a href="">
-                            <i class="fa fa-circle-o"></i>Rekap Pendapatan</a></li>
+                    <li class=""><a href="{{ route('countries.index')}}"><i class="fa fa-circle-o"></i>List Countries</a></li>
+                    <li class=""><a href="{{ route('countries.create')}}"><i class="fa fa-circle-o"></i>Tambah Countries</a></li>
+                    {{-- <li class=""><a href="{{ route('countries.grafik')}}"><i class="fa fa-circle-o"></i>Grafik Countries</a></li> --}}
                 </ul>
-            </li>
+            </li>            
+            
             <li class="treeview ">
                 <a href="">
-                    <i class="fa fa-user"></i> <span>Staf</span>
+                    <i class="fa fa-users"></i> <span>nationalities</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href=""><i
-                                    class="fa fa-circle-o"></i>List Staf</a></li>
-                    
-                        <li class=""><a href=""><i
-                                        class="fa fa-circle-o"></i>Tambah Staf</a></li>
-                    
+                    <li class=""><a href="{{ route('nationalities.index')}}"><i class="fa fa-circle-o"></i>List nationalities</a></li>
+                    <li class=""><a href="{{ route('nationalities.create')}}"><i class="fa fa-circle-o"></i>Tambah nationalities</a></li>
+                    {{-- <li class=""><a href="{{ route('nationalities.grafik')}}"><i class="fa fa-circle-o"></i>Grafik nationalities</a></li> --}}
                 </ul>
             </li>
+
+            <li class="treeview ">
+                <a href="">
+                    <i class="fa fa-users"></i> <span>destinationss</span>
+                    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{ route('destinations.index')}}"><i class="fa fa-circle-o"></i>List destinationss</a></li>
+                    <li class=""><a href="{{ route('destinations.create')}}"><i class="fa fa-circle-o"></i>Tambah destinationss</a></li>
+                    {{-- <li class=""><a href="{{ route('destinations.grafik')}}"><i class="fa fa-circle-o"></i>Grafik destinationss</a></li> --}}
+                </ul>
+            </li>
+
+
         </ul>
     </section>
 </aside>

@@ -16,7 +16,7 @@ class NationalityController extends Controller
     {
         $nationality = Nationality::all();
 
-        return view('post.create', compact('nationality'));
+        return view('nationalities.create', compact('nationality'));
     }
 
     /**
@@ -26,7 +26,7 @@ class NationalityController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('nationalities.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class NationalityController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect()->route('post.index')->withSuccess('Data Di Tambahkan !!!');
+        return redirect()->route('nationalities.index')->withSuccess('Data Di Tambahkan !!!');
     }
 
     /**
@@ -58,7 +58,7 @@ class NationalityController extends Controller
      */
     public function show(Nationality $nationality)
     {
-        return view('post.show', compact('nationality'));
+        return view('nationalities.show', compact('nationality'));
     }
 
     /**
@@ -72,7 +72,7 @@ class NationalityController extends Controller
     {
         $nationalitys = Nationality::all();
 
-        return view('post.edit', compact('nationality', 'na$nationalitys'));
+        return view('nationalities.edit', compact('nationality', 'na$nationalitys'));
     }
 
     /**
@@ -93,7 +93,7 @@ class NationalityController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect()->route('post.index')->withInfo('Data Di Ubah !!!');
+        return redirect()->route('nationalities.index')->withInfo('Data Di Ubah !!!');
     }
 
     /**
@@ -107,6 +107,6 @@ class NationalityController extends Controller
     {
         $nationality->delete();
 
-        return redirect()->route('post.index')->withDanger('Data Di Tambahkan !!!');
+        return redirect()->route('nationalities.index')->withDanger('Data Di Tambahkan !!!');
     }
 }

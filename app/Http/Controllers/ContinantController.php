@@ -16,7 +16,7 @@ class ContinantController extends Controller
     {
         $continant = Continant::all();
 
-        return view('post.create', compact('continant'));
+        return view('continants.create', compact('continant'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ContinantController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('continants.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class ContinantController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect()->route('post.index')->withSuccess('Data Di Tambahkan !!!');
+        return redirect()->route('continants.index')->withSuccess('Data Di Tambahkan !!!');
     }
 
     /**
@@ -58,7 +58,7 @@ class ContinantController extends Controller
      */
     public function show(Continant $continant)
     {
-        return view('post.show', compact('continant'));
+        return view('continants.show', compact('continant'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ContinantController extends Controller
     {
         $continants = Continant::all();
 
-        return view('post.edit', compact('continant', 'continants'));
+        return view('continants.edit', compact('continant', 'continants'));
     }
 
     /**
@@ -93,7 +93,7 @@ class ContinantController extends Controller
             'name' => request('name'),
         ]);
 
-        return redirect()->route('post.index')->withInfo('Data Di Ubah !!!');
+        return redirect()->route('continants.index')->withInfo('Data Di Ubah !!!');
     }
 
     /**
@@ -107,6 +107,6 @@ class ContinantController extends Controller
     {
         $continant->delete();
 
-        return redirect()->route('post.index')->withDanger('Data Di Tambahkan !!!');
+        return redirect()->route('continants.index')->withDanger('Data Di Tambahkan !!!');
     }
 }

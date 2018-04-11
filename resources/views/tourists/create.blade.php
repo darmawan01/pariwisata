@@ -3,15 +3,24 @@
     <!-- Main content -->
     <div class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">Tambahkan Hotel</h3>
+            <h3 class="box-title">Tambahkan tourists</h3>
         </div>
         <div class="box-body">
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('hotel.store') }}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('tourists.store') }}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
+                        
+                        <div class="form-group {{ $errors->has('passport_id') ? ' has-error' : '' }}">
+                            <label>Passport ID</label>
+                            <input value="{{ old('passport_id') }}" type="text" class="form-control" name="passport_id">
+                            @if ($errors->has('passport_id'))
+                                <span class="help-block"><strong>{{ $errors->first('passport_id') }}</strong></span>
+                            @endif
+                        </div>
+
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label>Name</label>
                             <input value="{{ old('name') }}" type="text" class="form-control" name="name">
@@ -52,7 +61,7 @@
                         <div class="form-group {{ $errors->has('nationality_id') ? ' has-error' : '' }}">
                             <label>Pilih Conutries</label><br>
                             <select id="basic2" class="show-tick form-control" name="nationality_id" multiple>
-                                <option disabled="" selected="">Pilih Conutries</option>
+                                <option disabled="" selected="">Pilih Nationality</option>
                                 @foreach($nationality as $n)
                                     <option value="{{ $n->id }}">{{ $n->name }}</option>
                                 @endforeach
@@ -62,16 +71,16 @@
                             @endif
                         </div>
 
-                        <div class="form-group {{ $errors->has('hotel_id') ? ' has-error' : '' }}">
-                            <label>Pilih Hotel</label><br>
-                            <select id="basic2" class="show-tick form-control" name="hotel_id" multiple>
-                                <option disabled="" selected="">Pilih Hotel</option>
-                                @foreach($user as $s)
-                                    <option value="{{ $s->id }}">{{ $s->nama }}</option>
+                        <div class="form-group {{ $errors->has('tourists_id') ? ' has-error' : '' }}">
+                            <label>Pilih tourists</label><br>
+                            <select id="basic2" class="show-tick form-control" name="tourists_id" multiple>
+                                <option disabled="" selected="">Pilih tourists</option>
+                                @foreach($tourist as $s)
+                                    <option value="{{ $s->id }}">{{ $s->name }}</option>
                                 @endforeach
                             </select>
-                            @if ($errors->has('hotel_id'))
-                                <span class="help-block"><strong>{{ $errors->first('hotel_id') }}</strong></span>
+                            @if ($errors->has('tourists_id'))
+                                <span class="help-block"><strong>{{ $errors->first('tourists_id') }}</strong></span>
                             @endif
                         </div>
 
@@ -79,8 +88,8 @@
                             <label>Pilih Destination</label><br>
                             <select id="basic2" class="show-tick form-control" name="destination_id" multiple>
                                 <option disabled="" selected="">Pilih Destination</option>
-                                @foreach($user as $s)
-                                    <option value="{{ $s->id }}">{{ $s->nama }}</option>
+                                @foreach($destination as $d)
+                                    <option value="{{ $d->id }}">{{ $d->name }}</option>
                                 @endforeach
                             </select>
                             @if ($errors->has('destination_id'))

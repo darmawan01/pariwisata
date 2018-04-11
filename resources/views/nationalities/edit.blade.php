@@ -9,13 +9,13 @@
             <div class="row">
                 <div class="col-md-6">
                     @include('template.alert')
-                    <form action="{{ route('nationalities.update', $hotel)}}" method="post" enctype="multipart/form-data"
+                    <form action="{{ route('destinations.update', $hotel)}}" method="post" enctype="multipart/form-data"
                           id="contactForm">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                             <label>Name</label>
-                            <input value="{{ $nationalities->name }}" type="text" class="form-control" name="name">
+                            <input value="{{ $destinations->name }}" type="text" class="form-control" name="name">
                             @if ($errors->has('name'))
                                 <span class="help-block"><strong>{{ $errors->first('name') }}</strong></span>
                             @endif

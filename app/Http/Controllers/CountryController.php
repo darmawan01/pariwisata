@@ -18,7 +18,7 @@ class DestinationController extends Controller
         $country = Country::all();
         $continant = Continant::all();
 
-        return view('post.create', compact('country', 'continant'));
+        return view('countries.create', compact('country', 'continant'));
     }
 
     /**
@@ -28,7 +28,7 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('countries.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class DestinationController extends Controller
             'continant_id' => request('continant_id'),
         ]);
 
-        return redirect()->route('post.index')->withSuccess('Data Di Tambahkan !!!');
+        return redirect()->route('countries.index')->withSuccess('Data Di Tambahkan !!!');
     }
 
     /**
@@ -62,7 +62,7 @@ class DestinationController extends Controller
      */
     public function show(Country $country)
     {
-        return view('post.show', compact('country'));
+        return view('countries.show', compact('country'));
     }
 
     /**
@@ -76,7 +76,7 @@ class DestinationController extends Controller
     {
         $countrys = Country::all();
 
-        return view('post.edit', compact('country', 'countrys'));
+        return view('countries.edit', compact('country', 'countrys'));
     }
 
     /**
@@ -99,7 +99,7 @@ class DestinationController extends Controller
             'continant_id' => request('continant_id'),
         ]);
 
-        return redirect()->route('post.index')->withInfo('Data Di Ubah !!!');
+        return redirect()->route('countries.index')->withInfo('Data Di Ubah !!!');
     }
 
     /**
@@ -113,6 +113,6 @@ class DestinationController extends Controller
     {
         $country->delete();
 
-        return redirect()->route('post.index')->withDanger('Data Di Tambahkan !!!');
+        return redirect()->route('countries.index')->withDanger('Data Di Tambahkan !!!');
     }
 }
