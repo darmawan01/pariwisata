@@ -3,7 +3,7 @@
     <!-- Main content -->
     <div class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">Tambahkan countries</h3>
+            <h3 class="box-title">Tambahkan Country</h3>
         </div>
         <div class="box-body">
             <div class="row">

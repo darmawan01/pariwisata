@@ -3,7 +3,7 @@
     <!-- Main content -->
     <div class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">Tambahkan destinations</h3>
+            <h3 class="box-title">Tambahkan Destination</h3>
         </div>
         <div class="box-body">
             <div class="row">

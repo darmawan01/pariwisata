@@ -6,7 +6,7 @@ use App\Country;
 use App\Continant;
 use Illuminate\Http\Request;
 
-class DestinationController extends Controller
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class DestinationController extends Controller
         $country = Country::all();
         $continant = Continant::all();
 
-        return view('countries.create', compact('country', 'continant'));
+        return view('countries.index', compact('country', 'continant'));
     }
 
     /**

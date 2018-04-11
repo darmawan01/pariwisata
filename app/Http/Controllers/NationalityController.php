@@ -16,7 +16,7 @@ class NationalityController extends Controller
     {
         $nationality = Nationality::all();
 
-        return view('nationalities.create', compact('nationality'));
+        return view('nationalities.index', compact('nationality'));
     }
 
     /**

@@ -16,7 +16,7 @@ class ContinantController extends Controller
     {
         $continant = Continant::all();
 
-        return view('continants.create', compact('continant'));
+        return view('continants.index', compact('continant'));
     }
 
     /**
