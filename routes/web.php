@@ -12,9 +12,8 @@
 */
 
 Route::group(['middleware' => 'auth'], function () {
-Route::get('/', function () {
-    return view('index');
-});
+    //dashbaord route
+    Route::get('/', 'DashboardController@index')->name('dashboard.index');
     //tourists route
     Route::get('/tourists/index', 'TouristController@index')->name('tourists.index');
     Route::get('/tourists/create', 'TouristController@create')->name('tourists.create');
